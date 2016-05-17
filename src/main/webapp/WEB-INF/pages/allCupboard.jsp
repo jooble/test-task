@@ -16,14 +16,14 @@
             <th></th>
         </tr>
         <c:forEach var="cupboard" items="${cupboards}">
-            <tr id="trCupboardId${cupboard.id}">
+            <tr id="cupboardTrId${cupboard.id}">
                 <td> ${cupboard.id}</td>
                 <td> ${cupboard.name}</td>
                 <td>
                     <p class="text-right">
                         <a class="btn btn-primary btn-xs" href="/view/cupboard/${cupboard.id}"
                            role="button">view</a>
-                        <a onclick="deleteCupboard(${cupboard.id})"
+                        <a onclick="deleteById(${cupboard.id}, 'cupboard')"
                            class="btn btn-danger btn-xs"
                            role="button">delete</a>
                         <a class="btn btn-success btn-xs" href="/save/cupboard/${cupboard.id}"

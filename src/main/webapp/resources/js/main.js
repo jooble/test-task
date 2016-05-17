@@ -1,13 +1,13 @@
-function deleteCupboard(cupboardId) {
-    if (confirm("Are you sure you want to remove the cupboard? \nID - " + cupboardId)) {
+function deleteById(id, name) {
+    if (confirm("Are you sure you want to remove the " + name + "? \nID - " + id)) {
         $.ajax({
             type: "POST",
-            url: "delete/cupboard/" + cupboardId,
+            url: "delete/" + name + "/" + id,
             success: function (result) {
-                $("#trCupboardId" + cupboardId).remove();
+                $("#" + name + "TrId" + id).remove();
             },
             error: function () {
-                alert("Can`t delete cupboard");
+                alert("Can`t delete " + name);
             }
         });
     }
