@@ -29,13 +29,12 @@ public class Hello {
 
     @RequestMapping(value = "/save", method = RequestMethod.GET)
     public String saveCupboard(ModelMap model) {
-        List<Equipment> equipments = new ArrayList<>();
-        for (int i = 0; i <= 10; i++){
-            Equipment equipment = new Equipment();
-            equipment.setType(TypeEquipmentEnum.Server);
-            equipments.add(equipment);
-        }
         Cupboard cupboard = new Cupboard();
+        List<Equipment> equipments = new ArrayList<>();
+        Equipment equipment = new Equipment();
+        equipment.setType(TypeEquipmentEnum.Server);
+        equipment.setCupboard(cupboard);
+        equipments.add(equipment);
         cupboard.setName("Шкаф");
         cupboard.setEquipments(equipments);
         cupboardService.save(cupboard);

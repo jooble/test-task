@@ -10,9 +10,11 @@
     ${cupboard.id}
     ${cupboard.name}
     <br>
-    <c:forEach var="equipment" items="${cupboard.equipments}">
-        ${equipment.type}
+    <c:forEach var="equipment" items="${cupboard.equipmentMap}">
+        ${equipment.key} - ${equipment.value.size()}
+        <br>
     </c:forEach>
+    <br>
 </c:forEach>
 </body>
 </html>

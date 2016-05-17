@@ -3,6 +3,7 @@ package ru.jooble.domain;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Map;
 
 @Entity
 public class Cupboard {
@@ -11,11 +12,22 @@ public class Cupboard {
     private int id;
     private String name;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy="cupboard")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "cupboard")
     private List<Equipment> equipments;
+
+    @Transient
+    private Map<TypeEquipmentEnum, List<Equipment>> equipmentMap;
 
     public Cupboard() {
 
+    }
+
+    public Map<TypeEquipmentEnum, List<Equipment>> getEquipmentMap() {
+        return equipmentMap;
+    }
+
+    public void setEquipmentMap(Map<TypeEquipmentEnum, List<Equipment>> equipmentMap) {
+        this.equipmentMap = equipmentMap;
     }
 
     public int getId() {

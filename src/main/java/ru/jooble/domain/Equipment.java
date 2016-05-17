@@ -22,6 +22,7 @@ public class Equipment {
 
     }
 
+
     public TypeEquipmentEnum getType() {
         return type;
     }
