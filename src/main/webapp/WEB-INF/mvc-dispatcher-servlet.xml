@@ -40,6 +40,7 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
+    <mvc:resources mapping="/resources/**" location="/resources/"/>
     <tx:annotation-driven transaction-manager="transactionManager"/>
     <mvc:annotation-driven/>
     <mvc:default-servlet-handler/>
