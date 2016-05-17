@@ -11,7 +11,7 @@ public class Cupboard {
     private int id;
     private String name;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, mappedBy="cupboard")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy="cupboard")
     private List<Equipment> equipments;
 
     public Cupboard() {

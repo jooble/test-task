@@ -7,7 +7,12 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import ru.jooble.domain.Cupboard;
+import ru.jooble.domain.Equipment;
+import ru.jooble.domain.TypeEquipmentEnum;
 import ru.jooble.service.CupboardService;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 @RequestMapping("/")
@@ -17,10 +22,23 @@ public class Hello {
 
     @RequestMapping(method = RequestMethod.GET)
     public String printWelcome(ModelMap model) {
+        List<Cupboard> equipments = cupboardService.getAll();
+        model.addAttribute("cupboards", equipments);
+        return "hello";
+    }
+
+    @RequestMapping(value = "/save", method = RequestMethod.GET)
+    public String saveCupboard(ModelMap model) {
+        List<Equipment> equipments = new ArrayList<>();
+        for (int i = 0; i <= 10; i++){
+            Equipment equipment = new Equipment();
+            equipment.setType(TypeEquipmentEnum.Server);
+            equipments.add(equipment);
+        }
         Cupboard cupboard = new Cupboard();
-        cupboard.setName("Cupboard");
+        cupboard.setName("Шкаф");
+        cupboard.setEquipments(equipments);
         cupboardService.save(cupboard);
-        model.addAttribute("hello", cupboardService.getById(0));
         return "hello";
     }
 }

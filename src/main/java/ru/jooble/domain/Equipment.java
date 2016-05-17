@@ -3,21 +3,31 @@ package ru.jooble.domain;
 
 import javax.persistence.*;
 
-@MappedSuperclass
+@Entity
 public class Equipment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+    @ManyToOne(fetch = FetchType.LAZY)
     private Cupboard cupboard;
 
+    @Enumerated(EnumType.STRING)
+    private TypeEquipmentEnum type;
     private String model;
     private int inventoryNumber;
     private String description;
 
     public Equipment() {
 
+    }
+
+    public TypeEquipmentEnum getType() {
+        return type;
+    }
+
+    public void setType(TypeEquipmentEnum type) {
+        this.type = type;
     }
 
     public int getId() {
