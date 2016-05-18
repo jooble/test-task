@@ -7,7 +7,11 @@
 </head>
 <body>
 <div class="container">
-    <a class="btn btn-primary btn-xs" href="/" role="button">All Cupboard</a>
+    <p>
+    <p>
+        <a class="btn btn-primary btn-xs" href="/" role="button">All Cupboard</a>
+    </p>
+    </p>
     <h1><p class="text-center">All Cupboard</p></h1>
     <p align="right"><a class="btn btn-info btn-xs" href="/save/cupboard" role="button">add cupboard</a></p>
     <table class="table">

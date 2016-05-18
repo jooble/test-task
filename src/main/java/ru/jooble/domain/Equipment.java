@@ -15,7 +15,7 @@ public class Equipment {
     @Enumerated(EnumType.STRING)
     private TypeEquipmentEnum type;
     private String model;
-    private int inventoryNumber;
+    private String inventoryNumber;
 
     public Equipment() {
 
@@ -45,11 +45,11 @@ public class Equipment {
         this.model = model;
     }
 
-    public int getInventoryNumber() {
+    public String getInventoryNumber() {
         return inventoryNumber;
     }
 
-    public void setInventoryNumber(int inventoryNumber) {
+    public void setInventoryNumber(String inventoryNumber) {
         this.inventoryNumber = inventoryNumber;
     }
 

@@ -8,16 +8,20 @@
 </head>
 <body>
 <div class="container">
-    <a class="btn btn-primary btn-xs" href="/" role="button">All Cupboard</a>
-    <h1><p class="text-center">Save equipment to cupboard (ID - ${equipmentForm.cupboardId}).</p></h1>
-    <form:form method="post" action="/save/equipment" commandName="equipmentForm">
-        <form:input class="form-control" id="id" path="id" value="${equipmentForm.id}" type="hidden"/>
-        <form:input class="form-control" id="cupboardId" path="cupboardId" value="${equipmentForm.cupboardId}"
+    <p>
+    <p>
+        <a class="btn btn-primary btn-xs" href="/" role="button">All Cupboard</a>
+    </p>
+    </p>
+    <h1><p class="text-center">Save equipment to cupboard (ID - ${equipment.cupboardId}).</p></h1>
+    <form:form method="post" action="/save/equipment" commandName="equipment">
+        <form:input class="form-control" id="id" path="id" value="${equipment.id}" type="hidden"/>
+        <form:input class="form-control" id="cupboardId" path="cupboardId" value="${equipment.cupboard.id}"
                     type="hidden"/>
         <div class="form-group">
             <label>Model</label>
             <form:input class="form-control" id="model" path="model" placeholder="Model"
-                        value="${equipmentForm.model}"/>
+                        value="${equipment.model}"/>
             <form:errors path="model" cssStyle="color: #ff0000;"/>
         </div>
         <div>
@@ -32,11 +36,11 @@
         <div class="form-group">
             <label>Inventory Number</label>
             <form:input class="form-control" id="inventoryNumber" path="inventoryNumber" placeholder="Inventory Number"
-                        value="${equipmentForm.inventoryNumber}"/>
+                        value="${equipment.inventoryNumber}"/>
             <form:errors path="inventoryNumber" cssStyle="color: #ff0000;"/>
         </div>
         <input class="btn btn-success btn-xs" type="submit" value="save">
-        <a class="btn btn-default btn-xs" href="/view/cupboard/${equipmentForm.cupboardId}" role="button">cancel</a>
+        <a class="btn btn-default btn-xs" href="/view/cupboard/${equipment.cupboard.id}" role="button">cancel</a>
     </form:form>
     </form>
 </div>
