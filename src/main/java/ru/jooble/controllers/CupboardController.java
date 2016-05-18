@@ -58,7 +58,7 @@ public class CupboardController {
     }
 
     @RequestMapping(value = "/save/cupboard", method = RequestMethod.POST)
-    public String saveCupboard(@Valid Cupboard cupboard, BindingResult bindingResult) {
+    public String saveCupboard( Cupboard cupboard, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return SAVE_CUPBOARD_PAGE;
         }

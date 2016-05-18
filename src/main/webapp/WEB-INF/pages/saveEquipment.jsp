@@ -13,10 +13,10 @@
         <a class="btn btn-primary btn-xs" href="/" role="button">All Cupboard</a>
     </p>
     </p>
-    <h1><p class="text-center">Save equipment to cupboard (ID - ${equipment.cupboardId}).</p></h1>
+    <h1><p class="text-center">Save equipment to cupboard (ID - ${equipment.cupboard.id}).</p></h1>
     <form:form method="post" action="/save/equipment" commandName="equipment">
         <form:input class="form-control" id="id" path="id" value="${equipment.id}" type="hidden"/>
-        <form:input class="form-control" id="cupboardId" path="cupboardId" value="${equipment.cupboard.id}"
+        <form:input class="form-control" id="cupboard" path="cupboard" value="${equipment.cupboard}"
                     type="hidden"/>
         <div class="form-group">
             <label>Model</label>

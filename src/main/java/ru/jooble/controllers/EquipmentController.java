@@ -62,7 +62,7 @@ public class EquipmentController {
     }
 
     @RequestMapping(value = "/save/equipment", method = RequestMethod.POST)
-    public String updateCupboard(@Valid Equipment equipment, BindingResult bindingResult, ModelMap model) {
+    public String updateCupboard(Equipment equipment, BindingResult bindingResult, ModelMap model) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("types", TypeEquipmentEnum.values());
             return SAVE_EQUIPMENT_PAGE;
