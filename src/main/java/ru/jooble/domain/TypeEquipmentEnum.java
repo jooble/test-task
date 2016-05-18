@@ -1,10 +1,17 @@
 package ru.jooble.domain;
 
 public enum TypeEquipmentEnum {
-    DiskArray,
-    Server,
-    UninterruptiblePowerSupply;
+    DiskArray("DiskArray"),
+    Server("Server"),
+    UninterruptiblePowerSupply("UninterruptiblePowerSupply");
 
-    TypeEquipmentEnum() {
+    private final String value;
+
+    TypeEquipmentEnum(String value) {
+        this.value = value;
+    }
+
+    public String getValue() {
+        return value;
     }
 }

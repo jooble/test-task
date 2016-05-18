@@ -27,6 +27,12 @@ public class EquipmentServiceImpl implements EquipmentService {
     }
 
     @Override
+    @Transactional(readOnly = true)
+    public List getAllInCupboardId(int id) {
+        return equipmentDao.getAllInCupboardId(id);
+    }
+
+    @Override
     @Transactional
     public void save(Equipment equipment) {
         equipmentDao.save(equipment);

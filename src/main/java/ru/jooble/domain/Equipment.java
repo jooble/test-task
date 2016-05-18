@@ -9,14 +9,13 @@ public class Equipment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     private Cupboard cupboard;
 
     @Enumerated(EnumType.STRING)
     private TypeEquipmentEnum type;
     private String model;
     private int inventoryNumber;
-    private String description;
 
     public Equipment() {
 
@@ -52,14 +51,6 @@ public class Equipment {
 
     public void setInventoryNumber(int inventoryNumber) {
         this.inventoryNumber = inventoryNumber;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public Cupboard getCupboard() {

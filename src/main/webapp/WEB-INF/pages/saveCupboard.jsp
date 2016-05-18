@@ -9,13 +9,15 @@
 </head>
 <body>
 <div class="container">
+    <a class="btn btn-primary btn-xs" href="/" role="button">All Cupboard</a>
     <h1><p class="text-center">Save Cupboard</p></h1>
-    <form:form method="post" action="/save/cupboard" modelAttribute="cupboardForm">
+    <form:form method="post" action="/save/cupboard" commandName="cupboardForm">
         <form:input class="form-control" id="id" path="id" value="${cupboardForm.id}" type="hidden"/>
         <label>Name</label><br/>
         <div class="form-group">
             <form:input class="form-control" id="name" path="name" placeholder="Name"
                         value="${cupboardForm.name}"/>
+            <form:errors path="name" cssStyle="color: #ff0000;"/>
         </div>
         <input class=" btn btn-success btn-xs" type="submit" value="save">
         <a class="btn btn-default btn-xs" href="/" role="button">cancel</a>

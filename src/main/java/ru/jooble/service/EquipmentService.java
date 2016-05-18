@@ -9,6 +9,8 @@ public interface EquipmentService {
 
     List<Equipment> getAll();
 
+    List getAllInCupboardId(int id);
+
     void save(Equipment equipment);
 
     void update(Equipment equipment);

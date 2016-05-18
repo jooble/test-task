@@ -1,4 +1,4 @@
-package ru.jooble.controllers.form;
+package ru.jooble.form;
 
 import ru.jooble.domain.Cupboard;
 
