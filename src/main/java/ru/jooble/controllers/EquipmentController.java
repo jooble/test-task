@@ -18,6 +18,8 @@ import ru.jooble.service.CupboardService;
 import ru.jooble.service.EquipmentService;
 import ru.jooble.validator.EquipmentFromValidator;
 
+import javax.validation.Valid;
+
 @Controller
 public class EquipmentController {
     private static final String SAVE_EQUIPMENT_PAGE = "saveEquipment";
@@ -32,7 +34,7 @@ public class EquipmentController {
     @Autowired
     CupboardService cupboardService;
 
-    @InitBinder("equipment")
+    @InitBinder("equipmentForm")
     private void initBinder(WebDataBinder binder) {
         binder.setValidator(equipmentFromValidator);
     }
@@ -62,7 +64,7 @@ public class EquipmentController {
     }
 
     @RequestMapping(value = "/save/equipment", method = RequestMethod.POST)
-    public String updateCupboard(@Validated EquipmentForm equipmentForm, BindingResult bindingResult, ModelMap model) {
+    public String updateCupboard(@Valid EquipmentForm equipmentForm, BindingResult bindingResult, ModelMap model) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("types", TypeEquipmentEnum.values());
             return SAVE_EQUIPMENT_PAGE;

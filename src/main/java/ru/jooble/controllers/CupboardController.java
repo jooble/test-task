@@ -17,6 +17,7 @@ import ru.jooble.service.CupboardService;
 import ru.jooble.service.EquipmentService;
 import ru.jooble.validator.CupboardFromValidator;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -34,7 +35,7 @@ public class CupboardController {
     @Autowired
     EquipmentService equipmentService;
 
-    @InitBinder("cupboard")
+    @InitBinder("cupboardForm")
     private void initBinder(WebDataBinder binder) {
         binder.setValidator(cupboardFromValidator);
     }
@@ -59,7 +60,7 @@ public class CupboardController {
     }
 
     @RequestMapping(value = "/save/cupboard", method = RequestMethod.POST)
-    public String saveCupboard(@Validated CupboardForm cupboardForm, BindingResult bindingResult) {
+    public String saveCupboard(@Valid CupboardForm cupboardForm, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return SAVE_CUPBOARD_PAGE;
         }

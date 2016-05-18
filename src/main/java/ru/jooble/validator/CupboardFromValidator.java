@@ -5,12 +5,14 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 import ru.jooble.domain.Cupboard;
+import ru.jooble.form.CupboardForm;
+import ru.jooble.form.EquipmentForm;
 
 @Component
 public class CupboardFromValidator implements Validator {
     @Override
     public boolean supports(Class<?> clazz) {
-        return Cupboard.class.equals(clazz);
+        return CupboardForm.class.equals(clazz);
     }
 
     @Override

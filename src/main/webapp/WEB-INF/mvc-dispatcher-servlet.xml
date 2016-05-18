@@ -48,5 +48,4 @@
     <tx:annotation-driven transaction-manager="transactionManager"/>
     <mvc:annotation-driven/>
     <mvc:default-servlet-handler/>
-
 </beans>

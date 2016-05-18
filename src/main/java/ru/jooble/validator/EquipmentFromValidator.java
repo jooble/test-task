@@ -4,14 +4,13 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
-import ru.jooble.domain.Equipment;
 import ru.jooble.form.EquipmentForm;
 
 @Component
 public class EquipmentFromValidator implements Validator {
     @Override
     public boolean supports(Class<?> clazz) {
-        return Equipment.class.equals(clazz);
+        return EquipmentForm.class.isAssignableFrom(clazz);
     }
 
     @Override
