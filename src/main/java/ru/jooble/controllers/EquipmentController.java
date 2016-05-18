@@ -16,8 +16,6 @@ import ru.jooble.service.CupboardService;
 import ru.jooble.service.EquipmentService;
 import ru.jooble.validator.EquipmentFromValidator;
 
-import javax.validation.Valid;
-
 @Controller
 public class EquipmentController {
     private static final String SAVE_EQUIPMENT_PAGE = "saveEquipment";
@@ -38,7 +36,7 @@ public class EquipmentController {
     }
 
     @RequestMapping(value = "/view/cupboard/{id}", method = RequestMethod.GET)
-    public String showPageAllEquipmentCupboard(@PathVariable(value = "id") int id, ModelMap model) {
+    public String showPageAllEquipment(@PathVariable(value = "id") int id, ModelMap model) {
         Cupboard cupboard = cupboardService.getById(id);
         cupboard.setEquipments(equipmentService.getAllInCupboardId(id));
         model.addAttribute("cupboard", cupboard);
@@ -62,7 +60,7 @@ public class EquipmentController {
     }
 
     @RequestMapping(value = "/save/equipment", method = RequestMethod.POST)
-    public String updateCupboard(Equipment equipment, BindingResult bindingResult, ModelMap model) {
+    public String saveEquipment(Equipment equipment, BindingResult bindingResult, ModelMap model) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("types", TypeEquipmentEnum.values());
             return SAVE_EQUIPMENT_PAGE;
