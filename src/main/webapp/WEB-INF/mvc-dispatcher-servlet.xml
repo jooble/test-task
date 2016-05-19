@@ -6,7 +6,7 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <context:component-scan base-package="ru.jooble"/>
+    <context:component-scan base-package="ru.jooble.inventorysystem"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"/>
@@ -25,7 +25,7 @@
 
     <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="packagesToScan" value="ru.jooble.domain"/>
+        <property name="packagesToScan" value="ru.jooble.inventorysystem.domain"/>
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
@@ -46,7 +46,7 @@
 
     <bean id="localeResolver"
           class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
-        <property name="defaultLocale" value="en" />
+        <property name="defaultLocale" value="en"/>
     </bean>
 
     <mvc:resources mapping="/resources/**" location="/resources/"/>

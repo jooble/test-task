@@ -1,6 +1,6 @@
-package ru.jooble.dao;
+package ru.jooble.inventorysystem.dao;
 
-import ru.jooble.domain.Equipment;
+import ru.jooble.inventorysystem.domain.Equipment;
 
 import java.util.List;
 

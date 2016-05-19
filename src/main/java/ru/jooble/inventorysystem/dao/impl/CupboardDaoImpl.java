@@ -1,8 +1,8 @@
-package ru.jooble.dao.impl;
+package ru.jooble.inventorysystem.dao.impl;
 
 import org.springframework.stereotype.Repository;
-import ru.jooble.dao.CupboardDao;
-import ru.jooble.domain.Cupboard;
+import ru.jooble.inventorysystem.dao.CupboardDao;
+import ru.jooble.inventorysystem.domain.Cupboard;
 
 import javax.annotation.PostConstruct;
 

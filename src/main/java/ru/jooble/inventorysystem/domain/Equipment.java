@@ -1,4 +1,4 @@
-package ru.jooble.domain;
+package ru.jooble.inventorysystem.domain;
 
 
 import javax.persistence.*;

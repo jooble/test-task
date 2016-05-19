@@ -1,6 +1,6 @@
-package ru.jooble.service;
+package ru.jooble.inventorysystem.service;
 
-import ru.jooble.domain.Cupboard;
+import ru.jooble.inventorysystem.domain.Cupboard;
 
 import java.util.List;
 

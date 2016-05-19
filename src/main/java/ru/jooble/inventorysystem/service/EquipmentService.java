@@ -1,6 +1,6 @@
-package ru.jooble.service;
+package ru.jooble.inventorysystem.service;
 
-import ru.jooble.domain.Equipment;
+import ru.jooble.inventorysystem.domain.Equipment;
 
 import java.util.List;
 

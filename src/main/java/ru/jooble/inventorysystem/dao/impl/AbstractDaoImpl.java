@@ -1,8 +1,8 @@
-package ru.jooble.dao.impl;
+package ru.jooble.inventorysystem.dao.impl;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import ru.jooble.dao.AbstractDao;
+import ru.jooble.inventorysystem.dao.AbstractDao;
 
 import java.util.List;
 

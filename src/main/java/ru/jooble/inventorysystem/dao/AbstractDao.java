@@ -1,4 +1,4 @@
-package ru.jooble.dao;
+package ru.jooble.inventorysystem.dao;
 
 import java.util.List;
 

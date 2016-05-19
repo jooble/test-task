@@ -1,11 +1,11 @@
-package ru.jooble.service.impl;
+package ru.jooble.inventorysystem.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.jooble.dao.EquipmentDao;
-import ru.jooble.domain.Equipment;
-import ru.jooble.service.EquipmentService;
+import ru.jooble.inventorysystem.dao.EquipmentDao;
+import ru.jooble.inventorysystem.domain.Equipment;
+import ru.jooble.inventorysystem.service.EquipmentService;
 
 import java.util.List;
 

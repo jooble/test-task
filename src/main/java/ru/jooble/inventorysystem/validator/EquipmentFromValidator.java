@@ -1,10 +1,10 @@
-package ru.jooble.validator;
+package ru.jooble.inventorysystem.validator;
 
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
-import ru.jooble.domain.Equipment;
+import ru.jooble.inventorysystem.domain.Equipment;
 
 @Component
 public class EquipmentFromValidator implements Validator {
