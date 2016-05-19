@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import ru.jooble.inventorysystem.domain.Cupboard;
 import ru.jooble.inventorysystem.domain.Equipment;
 import ru.jooble.inventorysystem.domain.TypeEquipmentEnum;
-import ru.jooble.inventorysystem.service.EquipmentService;
 import ru.jooble.inventorysystem.service.CupboardService;
+import ru.jooble.inventorysystem.service.EquipmentService;
 import ru.jooble.inventorysystem.validator.EquipmentFromValidator;
 
 import javax.validation.Valid;
@@ -81,7 +81,7 @@ public class EquipmentController {
             LOGGER.info("Save cupboard by request POST : /save/equipment/");
         } else {
             equipmentService.update(equipment);
-            LOGGER.info("Save equipment(ID" +  + equipment.getId() + ") by request POST : /save/equipment/");
+            LOGGER.info("Save equipment(ID" + +equipment.getId() + ") by request POST : /save/equipment/");
         }
         return "redirect:/view/cupboard/" + equipment.getCupboard().getId();
     }

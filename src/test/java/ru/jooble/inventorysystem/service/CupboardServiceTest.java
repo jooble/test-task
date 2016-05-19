@@ -1,5 +1,7 @@
-package java.ru.jooble.inventorysystem.service;
+package ru.jooble.inventorysystem.service;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,42 +9,47 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.annotation.Transactional;
 import ru.jooble.inventorysystem.domain.Cupboard;
-import ru.jooble.inventorysystem.service.CupboardService;
 
 import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:mvc-config.xml", "classpath:application-context.xml"})
+@ContextConfiguration(locations = {"classpath:applicationContext.xml"})
 public class CupboardServiceTest {
 
     @Autowired
-    private CupboardService cupboardService;
+    SessionFactory sessionFactory;
+
+    private Session session;
 
     @Test
+    @Transactional
     @Rollback
     public void saveCupboardTest() {
+        session = sessionFactory.getCurrentSession();
         Cupboard cupboard = new Cupboard();
         cupboard.setName("Шкаф");
-        Assert.assertTrue(cupboardService.save(cupboard));
+        session.save(cupboard);
+        Assert.assertTrue(cupboard.getId() == 1);
     }
 
     //JDBC TEMPLATE SELECT TEST EXAMPLE
-    @Test
+  /*  @Test
     @Rollback
     public void getAllCupboardTest() {
-        List<Cupboard> cupboardList = cupboardService.getAll();
+        List<Cupboard> cupboardList = sessionFactory.getAll();
         Assert.assertNotNull(cupboardList);
-        for (Cupboard cupboard : cupboardService.getAll()) {
-            System.out.println("Cupboard id: "+ cupboard.getId() + " Cupboard name : "+ cupboard.getName());
+        for (Cupboard cupboard : sessionFactory.getAll()) {
+            System.out.println("Cupboard id: " + cupboard.getId() + " Cupboard name : " + cupboard.getName());
         }
 
-    }
+    }*/
 
     //JDBC TEMPLATE DELETE TEST EXAMPLE
-    @Test
+   /* @Test
     @Rollback
     public void deleteByIdCupboardTest() {
-        Assert.assertTrue(cupboardService.deleteById(5));
-    }
+        Assert.assertTrue(sessionFactory.deleteById(5));
+    }*/
 }
