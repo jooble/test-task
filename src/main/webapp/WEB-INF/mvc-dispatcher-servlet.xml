@@ -44,6 +44,11 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
+    <bean id="localeResolver"
+          class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+        <property name="defaultLocale" value="en" />
+    </bean>
+
     <mvc:resources mapping="/resources/**" location="/resources/"/>
     <tx:annotation-driven transaction-manager="transactionManager"/>
     <mvc:annotation-driven/>

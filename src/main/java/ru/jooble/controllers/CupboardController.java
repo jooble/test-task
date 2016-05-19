@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -58,7 +59,7 @@ public class CupboardController {
     }
 
     @RequestMapping(value = "/save/cupboard", method = RequestMethod.POST)
-    public String saveCupboard(Cupboard cupboard, BindingResult bindingResult) {
+    public String saveCupboard(@Valid Cupboard cupboard, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return SAVE_CUPBOARD_PAGE;
         }

@@ -16,7 +16,8 @@
     <h1><p class="text-center">Save equipment to cupboard (ID - ${equipment.cupboard.id}).</p></h1>
     <form:form method="post" action="/save/equipment" commandName="equipment">
         <form:input class="form-control" id="id" path="id" value="${equipment.id}" type="hidden"/>
-        <form:input class="form-control" id="cupboard.id" path="cupboard.id" value="${equipment.cupboard.id}" type="hidden"/>
+        <form:input class="form-control" id="cupboard.id" path="cupboard.id" value="${equipment.cupboard.id}"
+                    type="hidden"/>
         <div class="form-group">
             <label>Model</label>
             <form:input class="form-control" id="model" path="model" placeholder="Model"

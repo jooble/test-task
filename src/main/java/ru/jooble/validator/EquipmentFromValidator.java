@@ -17,6 +17,13 @@ public class EquipmentFromValidator implements Validator {
     public void validate(Object target, Errors errors) {
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "model", "valid.equipmentModel.empty");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "inventoryNumber", "valid.equipmentInventoryNumber.empty");
+        Equipment message = (Equipment) target;
+
+        try {
+            Integer.parseInt(((Equipment) target).getInventoryNumber());
+        } catch (Exception e) {
+            errors.rejectValue("inventoryNumber", "valid.equipmentInventoryNumber.notNumber");
+        }
     }
 }
 
