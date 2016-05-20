@@ -3,7 +3,6 @@ package ru.jooble.inventorysystem.domain;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Map;
 
 @Entity
 public class Cupboard {
