@@ -1,4 +1,3 @@
-/*
 package ru.jooble.inventorysystem.service;
 
 import org.junit.After;
@@ -60,43 +59,18 @@ public class EquipmentServiceTest {
     }
 
     @Test
-    public void testGetById() {
-        Equipment equipment = equipmentService.getById(5);
-        Assert.assertEquals(equipment.getId(), 5);
-        Assert.assertEquals(equipment.get(), 5);
-
-    }
-
-    @Test*/
-/**//*
-
-    public void testSaveCupboard() {
-        Cupboard cupboard = new Cupboard();
-        cupboard.setName("Test11");
-        equipmentService.save(cupboard);
-        Assert.assertEquals(equipmentService.getById(11).getId(), 11);
-        Assert.assertEquals(equipmentService.getById(11).getName(), "Test11");
+    public void testInject() {
+        Assert.assertNotNull(equipmentService);
+        Assert.assertNotNull(cupboardService);
     }
 
     @Test
-    public void testUpdateCupboard() {
-        Cupboard cupboard = new Cupboard();
-        cupboard.setId(4);
-        cupboard.setName("Update4");
-        equipmentService.update(cupboard);
-        Assert.assertEquals(equipmentService.getById(4).getName(), "Update4");
-    }
+    public void testGetAllCriteriaCupboardId1() {
+        List<Equipment> equipments = equipmentService.getAllCriteriaCupboardId(3);
+        Assert.assertEquals(equipments.size(), 10);
 
-    @Test
-    public void testGetAllCupboard() {
-        List<Cupboard> cupboards = equipmentService.getAll();
-        Assert.assertEquals(cupboards.size(), 10);
-        Assert.assertEquals(cupboards.get(4).getName(), "Test4");
+        for (Equipment equipment : equipments) {
+            Assert.assertEquals(3, equipment.getCupboard().getId());
+        }
     }
-
-    @Test
-    public void testDeleteById() {
-        equipmentService.deleteById(2);
-        Assert.assertEquals(equipmentService.getAll().size(), 9);
-    }
-}*/
+}

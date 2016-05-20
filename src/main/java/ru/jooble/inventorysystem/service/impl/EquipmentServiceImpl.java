@@ -28,7 +28,7 @@ public class EquipmentServiceImpl implements EquipmentService {
 
     @Override
     @Transactional(readOnly = true)
-    public List getAllInCupboardId(int id) {
+    public List getAllCriteriaCupboardId(int id) {
         return equipmentDao.getAllInCupboardId(id);
     }
 

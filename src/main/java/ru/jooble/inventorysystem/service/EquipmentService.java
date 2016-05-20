@@ -9,7 +9,7 @@ public interface EquipmentService {
 
     List<Equipment> getAll();
 
-    List getAllInCupboardId(int id);
+    List getAllCriteriaCupboardId(int id);
 
     void save(Equipment equipment);
 

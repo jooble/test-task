@@ -43,7 +43,7 @@ public class EquipmentController {
     @RequestMapping(value = "/view/cupboard/{id}", method = RequestMethod.GET)
     public String showPageAllEquipment(@PathVariable(value = "id") int id, ModelMap model) {
         Cupboard cupboard = cupboardService.getById(id);
-        cupboard.setEquipments(equipmentService.getAllInCupboardId(id));
+        cupboard.setEquipments(equipmentService.getAllCriteriaCupboardId(id));
         model.addAttribute("cupboard", cupboard);
 
         LOGGER.info("Show page all equipment board ID - " + id);
