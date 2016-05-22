@@ -2,7 +2,7 @@ function deleteById(id, name) {
     if (confirm("Are you sure you want to remove the " + name + "? \nID - " + id)) {
         $.ajax({
             type: "POST",
-            url: contextPath + "/delete/" + name + "/" + id,
+            url:"/delete/" + name + "/" + id,
             success: function (result) {
                 $("#" + name + "TrId" + id).remove();
             },
