@@ -26,7 +26,7 @@
                 <td> ${cupboard.id}</td>
                 <td> ${cupboard.name}</td>
                 <td>
-                    <spring:url value="delete/cupboard/${cupboard.id}" var="deleteUrl" />
+                    <spring:url value="'delete/cupboard/${cupboard.id}'" var="deleteUrl"/>
                     <p class="text-right">
                         <a class="btn btn-primary btn-xs" href="view/cupboard/${cupboard.id}"
                            role="button">view</a>

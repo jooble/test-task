@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -31,8 +32,9 @@
                 <td> ${equipment.model}</td>
                 <td> ${equipment.inventoryNumber}</td>
                 <td>
+                    <spring:url value="'delete/equipment/${equipment.id}'" var="deleteUrl"/>
                     <p class="text-right">
-                        <a onclick="deleteById(${equipment.id}, 'equipment')"
+                        <a onclick="deleteById(${equipment.id}, 'equipment', ${deleteUrl})"
                            class="btn btn-danger btn-xs"
                            role="button">delete</a>
                         <a class="btn btn-success btn-xs" href="save/equipment/${equipment.id}"
