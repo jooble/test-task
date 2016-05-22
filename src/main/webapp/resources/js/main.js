@@ -1,8 +1,8 @@
-function deleteById(id, name) {
+function deleteById(id, name, url) {
     if (confirm("Are you sure you want to remove the " + name + "? \nID - " + id)) {
         $.ajax({
             type: "POST",
-            url:"/delete/" + name + "/" + id,
+            url: "" + url,
             success: function (result) {
                 $("#" + name + "TrId" + id).remove();
             },

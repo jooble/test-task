@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -25,10 +26,11 @@
                 <td> ${cupboard.id}</td>
                 <td> ${cupboard.name}</td>
                 <td>
+                    <spring:url value="delete/cupboard/${cupboard.id}" var="deleteUrl" />
                     <p class="text-right">
                         <a class="btn btn-primary btn-xs" href="view/cupboard/${cupboard.id}"
                            role="button">view</a>
-                        <a onclick="deleteById(${cupboard.id}, 'cupboard')"
+                        <a onclick="deleteById(${cupboard.id}, 'cupboard', ${deleteUrl})"
                            class="btn btn-danger btn-xs"
                            role="button">delete</a>
                         <a class="btn btn-success btn-xs" href="save/cupboard/${cupboard.id}"
