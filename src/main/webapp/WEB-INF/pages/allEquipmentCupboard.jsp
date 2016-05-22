@@ -10,11 +10,11 @@
 <div class="container">
     <p>
     <p>
-        <a class="btn btn-primary btn-xs" href="${contextPath}/" role="button">All Cupboard</a>
+        <a class="btn btn-primary btn-xs" href="" role="button">All Cupboard</a>
     </p>
     </p>
     <h1><p class="text-center">All the equipment cupboard (ID - ${cupboard.id})</p></h1>
-    <p align="right"><a class="btn btn-info btn-xs" href="${contextPath}/cupboard/${cupboard.id}/save/equipment" role="button">add
+    <p align="right"><a class="btn btn-info btn-xs" href="cupboard/${cupboard.id}/save/equipment" role="button">add
         equipment</a></p>
     <table class="table">
         <tr>
@@ -35,7 +35,7 @@
                         <a onclick="deleteById(${equipment.id}, 'equipment')"
                            class="btn btn-danger btn-xs"
                            role="button">delete</a>
-                        <a class="btn btn-success btn-xs" href="${contextPath}/save/equipment/${equipment.id}"
+                        <a class="btn btn-success btn-xs" href="save/equipment/${equipment.id}"
                            role="button">edit</a>
                     </p>
                 </td>

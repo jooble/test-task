@@ -7,15 +7,14 @@
     <jsp:include page="setupPageJsp.jsp" flush="true"/>
 </head>
 <body>
-<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <div class="container">
     <p>
     <p>
-        <a class="btn btn-primary btn-xs" href="${contextPath}/" role="button">All Cupboard</a>
+        <a class="btn btn-primary btn-xs" href="" role="button">All Cupboard</a>
     </p>
     </p>
     <h1><p class="text-center">Save equipment to cupboard (ID - ${equipment.cupboard.id}).</p></h1>
-    <form:form method="post" action="${contextPath}/save/equipment" commandName="equipment">
+    <form:form method="post" action="save/equipment" commandName="equipment">
         <form:input class="form-control" id="id" path="id" value="${equipment.id}" type="hidden"/>
         <form:input class="form-control" id="cupboard.id" path="cupboard.id" value="${equipment.cupboard.id}"
                     type="hidden"/>
@@ -41,7 +40,7 @@
             <form:errors path="inventoryNumber" cssStyle="color: #ff0000;"/>
         </div>
         <input class="btn btn-success btn-xs" type="submit" value="save">
-        <a class="btn btn-default btn-xs" href="${contextPath}/view/cupboard/${equipment.cupboard.id}" role="button">cancel</a>
+        <a class="btn btn-default btn-xs" href="view/cupboard/${equipment.cupboard.id}" role="button">cancel</a>
     </form:form>
     </form>
 </div>
